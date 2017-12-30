@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="A psd to html for testing purpose">
+    <meta name="keywords" content="Psd to HTML, Front-end, Testing purpose website">
+    <meta name="author" content="Sheik Md. Anwar Hussain Mizan">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Lorem - Testing creativity</title>
+    <!-- favicon -->
+    <link rel="icon" href="/images/favicon.ico" type="image/png">
+
+    <!-- Adding Bangla font -->
+    <link href="https://fonts.maateen.me/adorsho-lipi/font.css" rel="stylesheet">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="home">
+  <div class="container" style="overflow:hidden;">
+    <h2 class="mt-5 text-center">HTML Form</h2>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <form action="" id="form">
+          <div class="form-group">
+            <label for="fname" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control-success" id="fname" placeholder="Your first name" data-validation="length alphanumeric" data-validation-length="3-12" data-validation-error-msg="First name is required">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lname" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control-success" id="lname" placeholder="Your last name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone" class="col-sm-2 col-form-label">Phone Number</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control-success" id="phone" placeholder="Your phone number" data-validation="number">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="address" class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control-success" id="address" placeholder="Your address" data-validation="length" data-validation-length="min5">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control form-control-success" id="email" placeholder="Your email" data-validation="email">
+            </div>
+          </div>
+          <p>
+            <input type="submit" class="btn btn-primary ml-3 d-block" value="Submit" id="check-form">
+            <div id="form-messages">
+              <div class="text-success" style="display:none">Form submission is succesful</div>
+              <div class="text-error" style="display:none">Form submission is unsuccesful</div>
+            </div>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/vali.js"></script>
+  <script src="js/ajax.js"></script>
+  <script>
+
+    $.validate({
+      modules : 'location, date, security, file',
+      onModulesLoaded : function() {
+        $('#country').suggestCountry();
+      },
+      // onSuccess : function($form) {
+      //     alert('The '+$form.attr('id')+' is valid!');
+      //     return false; // Will stop the submission of the form
+      // },
+    });
+    // Restrict presentation length
+    $('#presentation').restrictLength( $('#pres-max-length') );
+
+
+
+  </script>
+</body>
+</html>
